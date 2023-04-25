@@ -57,3 +57,50 @@ function isSubstring(searchString, subString) {
 
 console.log(isSubstring("time to program", "time"));
 console.log(isSubstring("Jump for joy", "joys"));
+
+function fizzBuzz(array) {
+    var output = []
+    array.forEach((el) => {
+        if (el % 3 === 0 && el % 5 !== 0) {
+            output.push(el);
+        } else if (el % 5 === 0 && el % 3 !== 0) {
+            output.push(el);
+        }
+
+    });
+    return output;
+}
+
+console.log(fizzBuzz([3, 6, 5, 8, 10, 15]));
+
+function isPrime(number) {
+    for (i = 2; i < number; i++) {
+        if (number % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isPrime(2));
+console.log(isPrime(10));
+console.log(isPrime(15485863));
+console.log(isPrime(3548563));
+
+function sumOfNPrimes(n) {
+    var firstNPrimes = [];
+    var sum = 0;
+    var i = 2;
+    while (firstNPrimes.length < n) {
+        if (isPrime(i)) {
+            firstNPrimes.push(i);
+            sum += i;
+        }
+        i++;
+    }
+    return sum;
+}
+
+console.log(sumOfNPrimes(0));
+console.log(sumOfNPrimes(1));
+console.log(sumOfNPrimes(4));
