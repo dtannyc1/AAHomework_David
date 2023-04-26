@@ -54,6 +54,7 @@ const dinerBreakfast = function () {
     let order = ["cheesy scrambled eggs"];
 
     console.log(`I'd like ${order.join(" and ")} please.`);
+
     return (meal) => {
         order.push(meal);
         console.log(`I'd like ${order.join(" and ")} please.`);
