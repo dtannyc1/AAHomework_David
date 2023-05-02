@@ -19,8 +19,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // adding SF places as list items
 
   // --- your code here!
+  const submitListItem = (e) => {
 
+    let input = document.getElementsByClassName("favorite-input");
+    let sfPlaceInput = input[0].value;
+    input[0].value = "";
 
+    const ul = document.getElementById("sf-places");
+    const li = document.createElement('li');
+    li.textContent = sfPlaceInput;
+    ul.appendChild(li);
+  }
+
+  let buttons = document.getElementsByClassName("favorite-submit");
+  buttons[0].addEventListener("click", event => {
+    event.preventDefault();
+    submitListItem(event);
+  });
 
   // adding new photos
 
