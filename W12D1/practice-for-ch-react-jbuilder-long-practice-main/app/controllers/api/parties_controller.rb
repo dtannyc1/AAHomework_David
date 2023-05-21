@@ -5,9 +5,9 @@ class Api::PartiesController < ApplicationController
   end
 
   def show
-    @party = Party.includes(guests: [:gifts]).find(params[:id])
+    @party = Party.includes(gifts: [:guest]).includes(guests: [:gifts]).find(params[:id])
 
-    render :show
-    # render :normalized_show
+    # render :show
+    render :normalized_show
   end
 end
